@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sagar Gupta" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <title>Sagar Gupta — Senior Frontend Engineer</title>
+    <meta
+      name="description"
+      content="Senior Frontend Engineer building scalable, performant and accessible web applications with React, TypeScript and thoughtful architecture."
+    />
+    <link rel="canonical" href="https://sg2705.github.io/portfolio/" />
+
+    <meta property="og:site_name" content="Sagar Gupta" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://sg2705.github.io/portfolio/" />
+    <meta
+      property="og:title"
+      content="Sagar Gupta — Senior Frontend Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Senior Frontend Engineer building scalable, performant and accessible web applications with React, TypeScript and thoughtful architecture."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sagar Gupta — Senior Frontend Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Senior Frontend Engineer building scalable, performant and accessible web applications with React, TypeScript and thoughtful architecture."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="%BASE_URL%image.png" type="image/png" />
+    <link rel="manifest" href="%BASE_URL%site.webmanifest" />
+
+    <script>
+      (() => {
+        try {
+          const localTheme = localStorage.getItem("portfolio-theme");
+          const isDarkTheme = localTheme
+            ? localTheme === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+          if (isDarkTheme) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.style.colorScheme = "dark";
+          }
+        } catch (e) {
+          console.error("Theme not applied: ", e);
+        }
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sagar Gupta",
+        "jobTitle": "Senior Frontend Engineer",
+        "description": "Senior Frontend Engineer building scalable, performant and accessible web applications with React, TypeScript and thoughtful architecture.",
+        "email": "mailto:gupta.sagar27051997@gmail.com",
+        "sameAs": [
+          "https://github.com/SG2705",
+          "https://www.linkedin.com/in/sagar-gupta27"
+        ],
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "Frontend Architecture",
+          "Web Performance",
+          "Accessibility",
+          "Design Systems"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

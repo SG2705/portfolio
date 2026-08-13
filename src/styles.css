@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — calm, minimal, engineering-focused.
+ * Accent: deep indigo (#4F46E5). Light: warm off-white. Dark: charcoal.
+ * All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-ring-offset-background: var(--background);
+  --font-sans: var(--font-sans-family);
+  --font-mono: var(--font-mono-family);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lifted: var(--shadow-lifted);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --font-sans-family:
+    "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-mono-family:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --background: oklch(0.98 0.005 85);
+  --foreground: oklch(0.21 0.012 275);
+  --card: oklch(0.995 0.003 85);
+  --card-foreground: oklch(0.21 0.012 275);
+  --surface: oklch(0.958 0.006 85);
+  --surface-foreground: oklch(0.21 0.012 275);
+  --popover: oklch(0.995 0.003 85);
+  --popover-foreground: oklch(0.21 0.012 275);
+  --primary: oklch(0.512 0.223 277.1);
+  --primary-foreground: oklch(0.985 0.005 275);
+  --secondary: oklch(0.945 0.006 85);
+  --secondary-foreground: oklch(0.29 0.012 275);
+  --muted: oklch(0.949 0.006 85);
+  --muted-foreground: oklch(0.512 0.012 275);
+  --accent: oklch(0.94 0.02 277);
+  --accent-foreground: oklch(0.42 0.16 277);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.005 275);
+  --border: oklch(0.9 0.006 85);
+  --input: oklch(0.9 0.006 85);
+  --ring: oklch(0.512 0.223 277.1);
+
+  --shadow-soft:
+    0 1px 2px oklch(0.21 0.012 275 / 0.04),
+    0 8px 24px -12px oklch(0.21 0.012 275 / 0.12);
+  --shadow-lifted:
+    0 2px 4px oklch(0.21 0.012 275 / 0.05),
+    0 18px 40px -16px oklch(0.21 0.012 275 / 0.18);
+}
+
+.dark {
+  --background: oklch(0.168 0.008 278);
+  --foreground: oklch(0.945 0.005 275);
+  --card: oklch(0.208 0.009 278);
+  --card-foreground: oklch(0.945 0.005 275);
+  --surface: oklch(0.196 0.009 278);
+  --surface-foreground: oklch(0.945 0.005 275);
+  --popover: oklch(0.208 0.009 278);
+  --popover-foreground: oklch(0.945 0.005 275);
+  --primary: oklch(0.63 0.185 277.5);
+  --primary-foreground: oklch(0.16 0.01 278);
+  --secondary: oklch(0.248 0.01 278);
+  --secondary-foreground: oklch(0.93 0.005 275);
+  --muted: oklch(0.248 0.01 278);
+  --muted-foreground: oklch(0.68 0.012 275);
+  --accent: oklch(0.28 0.045 277);
+  --accent-foreground: oklch(0.82 0.09 277);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0.005 275);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.63 0.185 277.5);
+
+  --shadow-soft:
+    0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -12px oklch(0 0 0 / 0.6);
+  --shadow-lifted:
+    0 2px 6px oklch(0 0 0 / 0.45), 0 20px 44px -18px oklch(0 0 0 / 0.7);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans-family);
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Subtle dotted grid used behind the hero. */
+@utility grid-backdrop {
+  background-image: radial-gradient(
+    circle at center,
+    color-mix(in oklab, var(--foreground) 16%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 30%,
+    black 10%,
+    transparent 75%
+  );
+}
+
+@utility text-balance-tight {
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}

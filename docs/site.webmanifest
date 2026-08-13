@@ -1,0 +1,17 @@
+{
+  "name": "Sagar Gupta — Senior Frontend Engineer",
+  "short_name": "Sagar Gupta",
+  "description": "Portfolio of Sagar Gupta, Senior Frontend Engineer.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#faf9f7",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "image.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
