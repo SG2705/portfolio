@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my work as a Senior Frontend Engineer. Built with React, TypeScript, and Tailwind CSS.
 
-🔗 **Live site:** [sg2705.github.io](https://sg2705.github.io)
+🔗 **Live site:** ([https://sg2705.github.io](https://sg2705.github.io/portfolio/))
 
 ## Tech Stack
 
